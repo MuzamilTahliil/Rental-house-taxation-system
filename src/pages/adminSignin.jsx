@@ -24,7 +24,7 @@ const AdminSignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/admin/login", formData);
+      const response = await axios.post("http://localhost:5000/api/users/login", formData);
       alert("Logged in successfully!");
       localStorage.setItem("token", response.data.token); // Save the JWT token
       navigate("/admin-dashboard"); // Navigate to the admin dashboard after successful login
@@ -81,7 +81,7 @@ const AdminSignIn = () => {
 
               <button
                 type="submit"
-                className="w-[200px] py-3 bg-indigo-900 text-white font-semibold rounded-xl hover:bg-indigo-800 transition-all duration-300 mt-4"
+                className="w-[200px] py-3 ml-24 bg-indigo-900 text-white font-semibold rounded-xl hover:bg-indigo-800 transition-all duration-300 mt-4"
               >
                 Sign In
               </button>
